@@ -93,7 +93,6 @@ def main():
                                             newLines.append(line)
 
                                     print(" * Profile SII Writing...")
-                                    print(newLines)
                                     with open("profile.sii", "w") as profileDetailWriting:
                                         profileDetailWriting.writelines(newLines)
 
@@ -110,84 +109,6 @@ def main():
         _selectGame = input("Choose the game you want to align: ")
 
 
-"""
- 
-
-if _selectGame == '' or _selectGame == ' ':
-    print(
-        " Error Input : ", _selectGame
-    )
-os.system('cls')
-os.execl(sys.executable, "start " + os.path.abspath(__file__))
-else:
-print("Input : ", _selectGame)
-
-_selectGameResult = gameList.get(_selectGame)
-print("\nSelect Game: ", _selectGameResult)
-_selectGamePath = os.path.join(myDocumentsPath, _selectGameResult)
-print("Select Game Path :", _selectGamePath)
-
-_selectGamePathExists = os.path.exists(_selectGamePath)
-# print("Select Game Path Exists Result :", _selectGamePathExists)
-
-if _selectGamePathExists:
-    os.chdir(_selectGamePath)
-# cwd()
-# Profiles Path
-_selectGameProfilesPath = os.path.join(_selectGamePath, "Profiles")
-# print("Select Game Profiles Path :", _selectGameProfilesPath)
-
-_selectGameProfilePathExists = os.path.exists(_selectGameProfilesPath)
-# print("Select Game Profiles Path Exists Result :", _selectGameProfilePathExists)
-
-if _selectGameProfilePathExists:
-    os.chdir(_selectGameProfilesPath)
-# cwd()
-print("Profile List")
-print("------------------")
-for profileDir_index, profileDir in enumerate(os.listdir(os.getcwd())):
-    print(
-        "---------------------------------------------------------------------------------------------")
-print("[", profileDir_index, "] | Active Profile\n"
-                             "[", profileDir_index, "] | -> Name :", profileDir)
-_activeProfilePath = os.path.join(os.getcwd(), profileDir)
-_activeProfilePathExists = os.path.exists(_activeProfilePath)
-os.chdir(_activeProfilePath)
-shutil.copyfile(SII_exe, os.getcwd() + "/SII.exe")
-
-_activeProfileInfoFilePath = os.path.join(_activeProfilePath, "profile.sii")
-
-_activeProfileInfoFilePathExists = os.path.exists(_activeProfileInfoFilePath)
-cmd = "SII.exe profile.sii"
-os.system(cmd)
-# time.sleep(1.0)
-# cwd()
-print("Profile SII Reading....")
-newLines = []
-with open("profile.sii", "r") as profileDetailReading:
-
-    lines = profileDetailReading.readlines()
-for line_index, line in enumerate(lines):
-    if
-line.startswith(" cached_discovery["):
-del lines[line_index]
-else:
-if line.startswith(" cached_discovery:"):
-    line = " cached_discovery: 0\n"
-else:
-    pass
-newLines.append(line)
-# print(newLines)
-print("Profile SII Writing...")
-with open("profile.sii", "w") as profileDetailWriting:
-    profileDetailWriting.writelines(newLines)
-
-print(
-    "Cached Stats AND Discovery truncated !"
-)
-
-input("🚪 | Press any key to exit :")
-"""
 
 # Press the green button in the gutter to run the script.
 
@@ -208,4 +129,3 @@ if __name__ == '__main__':
     except Exception as e:
         logging.error("Error : ", e)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
